@@ -24,7 +24,7 @@ export default class Produk extends Component {
     const { totalHarga } = this.state;
 
     return (
-      <div className="mt-4">
+      <div className="mt-4  pb-28">
         <Total totalHarga={totalHarga} />
         <div className="h-96 overflow-auto">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 m-5">

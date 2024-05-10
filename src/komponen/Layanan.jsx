@@ -4,7 +4,7 @@ export default class Layanan extends Component {
   render() {
     const { layanan } = this.props;
     return (
-      <div className="lg:overflow-x-scroll">
+      <div className="lg:overflow-x-scroll  pb-28">
         <div className="px-4 py-3 grid grid-cols-1 gap-4 h-[400px] overflow-y-scroll lg:grid-cols-7 lg:gap-4 lg:w-[3500px] lg:h-auto">
           {layanan.map((item, index) => (
             <a key={index} href="#" className="group relative block h-64 sm:h-80 lg:h-96">
