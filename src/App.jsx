@@ -7,6 +7,8 @@ import Produk from "./komponen/Produk.jsx";
 import Komentar from "./komponen/Komentar.jsx";
 import Login from './komponen/Login.jsx';
 import Footer from './komponen/Footer.jsx'
+import Table from './komponen/Table.jsx'
+import ProtectedRoute from './komponen/ProtectedRoute.jsx';
 
 const layanan = [
   { name: 'Layanan pertama', isi: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus ullam recusandae voluptates non excepturi tempore libero, maxime assumenda hic optio.' },
@@ -34,12 +36,15 @@ export default function App() {
       <div className="bg-gray-200">
         <Header />
         <Routes>
-          <Route path="/Infomasi" element={<Infomasi />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Layanan" element={<Layanan layanan={layanan} />} />
-          <Route path="/Produk" element={<Produk produk={produk} />} />
-          <Route path="/Komentar" element={<Komentar />} />
+          <Route path="/" element={<Login/>}/>
+          <Route path="/Infomasi" element={<ProtectedRoute element={<Infomasi />} />} />
+          <Route path="/About" element={<ProtectedRoute element={<About />} />} />
+          <Route path="/Layanan" element={<ProtectedRoute element={<Layanan layanan={layanan} />} />} />
+          <Route path="/Produk" element={<ProtectedRoute element={<Produk produk={produk} />} />} />
+          <Route path="/Komentar" element={<ProtectedRoute element={<Komentar />} />} />
+          <Route path="/Table" element={<ProtectedRoute element={<Table />} />} />
           <Route path="/Login" element={<Login />} />
+
         </Routes>
         <Footer/>
       </div>

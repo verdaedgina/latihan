@@ -1,29 +1,26 @@
-// src/Login.js
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
     setError('');
 
     try {
-      // Fetch user data from the dummy API
       const response = await axios.get('https://dummyjson.com/users');
       const users = response.data.users;
 
-      // Find user with matching username and password
       const user = users.find(u => u.email === email && u.password === password);
 
       if (user) {
-        // Simpan token di local storage (atau di mana pun yang aman)
         localStorage.setItem('token', 'dummy-token');
-        // Redirect ke halaman informasi setelah login berhasil
-        window.location.href = '/Infomasi';
+        navigate('/informasi');
       } else {
         setError('Invalid email or password');
       }
@@ -37,10 +34,11 @@ const Login = () => {
       <div className="mx-auto max-w-lg">
         <h1 className="text-center text-2xl font-bold text-slate-800 sm:text-3xl">Login</h1>
 
+        <p className="text-center text-lg font-medium">Sign in to your account</p>
+
         <form onSubmit={handleLogin} className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
           <div>
             <label htmlFor="email" className="sr-only">Email</label>
-
             <div className="relative">
               <input
                 type="email"
@@ -50,7 +48,6 @@ const Login = () => {
                 placeholder="Enter email"
                 required
               />
-
               <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +69,6 @@ const Login = () => {
 
           <div>
             <label htmlFor="password" className="sr-only">Password</label>
-
             <div className="relative">
               <input
                 type="password"
@@ -82,7 +78,6 @@ const Login = () => {
                 placeholder="Enter password"
                 required
               />
-
               <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

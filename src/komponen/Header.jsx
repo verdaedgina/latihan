@@ -16,7 +16,8 @@ export default class Header extends Component {
             <li><Link className="px-4 py-2 hover:text-gray-300" to="/Layanan">Services</Link></li>
             <li><Link className="px-4 py-2 hover:text-gray-300" to="/Produk">Produk</Link></li>
             <li><Link className="px-4 py-2 hover:text-gray-300" to="/Komentar">Contact</Link></li>
-            <li><Link className="px-4 py-2 hover:text-gray-300" to="/Login">Keluar</Link></li>
+            <li><Link className="px-4 py-2 hover:text-gray-300" to="/Table">User</Link></li>
+            <li><Link className="px-4 py-2 hover:text-gray-300" to="/Login">Login</Link></li>
           </ul>
         </header>
       </div>
