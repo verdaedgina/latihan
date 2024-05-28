@@ -1,8 +1,15 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-
 export default class Header extends Component {
+  handleLoginClick = (e) => {
+    e.preventDefault();
+    const confirmLogin = window.confirm("Apakah Anda yakin ingin keluar?");
+    if (confirmLogin) {
+      window.location.href = '/Login';
+    }
+  };
+
   render() {
     return (
       <div className="header bg-slate-800 text-white p-4">
@@ -17,7 +24,11 @@ export default class Header extends Component {
             <li><Link className="px-4 py-2 hover:text-gray-300" to="/Produk">Produk</Link></li>
             <li><Link className="px-4 py-2 hover:text-gray-300" to="/Komentar">Contact</Link></li>
             <li><Link className="px-4 py-2 hover:text-gray-300" to="/Table">User</Link></li>
-            <li><Link className="px-4 py-2 hover:text-gray-300" to="/Login">Login</Link></li>
+            <li>
+              <a href="/Login" className="px-4 py-2 hover:text-gray-300" onClick={this.handleLoginClick}>
+                Logout
+              </a>
+            </li>
           </ul>
         </header>
       </div>

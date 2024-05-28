@@ -21,13 +21,13 @@ const layanan = [
 ];
 
 const produk = [
-  { nama: 'Produk pertama', harga: 'Rp.10.000' },
-  { nama: 'Produk kedua', harga: 'Rp.10.000' },
-  { nama: 'Produk ketiga', harga: 'Rp.10.000' },
+  { nama: 'Produk pertama', harga: 'Rp.50.000' },
+  { nama: 'Produk kedua', harga: 'Rp.30.000' },
+  { nama: 'Produk ketiga', harga: 'Rp.33.000' },
   { nama: 'Produk keempat', harga: 'Rp.10.000' },
-  { nama: 'Produk kelima', harga: 'Rp.10.000' },
-  { nama: 'Produk keenam', harga: 'Rp.10.000' },
-  { nama: 'Produk ketuju', harga: 'Rp.10.000' },
+  { nama: 'Produk kelima', harga: 'Rp.8.000' },
+  { nama: 'Produk keenam', harga: 'Rp.99.000' },
+  { nama: 'Produk ketuju', harga: 'Rp.45.000' },
 ];
 
 export default function App() {
